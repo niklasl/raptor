@@ -163,6 +163,9 @@ endif
 if RAPTOR_SERIALIZER_JSON
 libraptor2_la_SOURCES += raptor_serialize_json.c
 endif
+if RAPTOR_SERIALIZER_JSONLD
+libraptor2_la_SOURCES += raptor_serialize_jsonld.c
+endif
 if STRCASECMP
 libraptor2_la_SOURCES += strcasecmp.c
 endif

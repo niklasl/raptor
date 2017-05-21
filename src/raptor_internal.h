@@ -950,6 +950,9 @@ int raptor_init_serializer_html(raptor_world* world);
 /* raptor_serialize_json.c */  
 int raptor_init_serializer_json(raptor_world* world);
 
+/* raptor_serialize_jsonld.c */
+int raptor_init_serializer_jsonld(raptor_world* world);
+
 /* raptor_unicode.c */
 extern const raptor_unichar raptor_unicode_max_codepoint;
 

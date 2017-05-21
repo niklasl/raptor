@@ -973,9 +973,10 @@ atom_serializer=no
 dot_serializer=no
 html_serializer=no
 json_serializer=no
+jsonld_serializer=no
 nquads_serializer=no
 
-rdf_serializers_available="rdfxml rdfxml-abbrev turtle mkr ntriples rss-1.0 dot html json atom nquads"
+rdf_serializers_available="rdfxml rdfxml-abbrev turtle mkr ntriples rss-1.0 dot html json jsonld atom nquads"
 
 # This is needed because autoheader can't work out which computed
 # symbols must be pulled from acconfig.h into config.h.in
@@ -990,6 +991,7 @@ if test "x" = "y"; then
   AC_DEFINE(RAPTOR_SERIALIZER_DOT, 1, [Building GraphViz DOT serializer])
   AC_DEFINE(RAPTOR_SERIALIZER_HTML, 1, [Building HTML Table serializer])
   AC_DEFINE(RAPTOR_SERIALIZER_JSON, 1, [Building JSON serializer])
+  AC_DEFINE(RAPTOR_SERIALIZER_JSONLD, 1, [Building JSON-LD serializer])
   AC_DEFINE(RAPTOR_SERIALIZER_NQUADS, 1, [Building N-Quads serializer])
 fi
 
@@ -1024,6 +1026,7 @@ AM_CONDITIONAL(RAPTOR_SERIALIZER_ATOM, test $atom_serializer = yes)
 AM_CONDITIONAL(RAPTOR_SERIALIZER_DOT, test $dot_serializer = yes)
 AM_CONDITIONAL(RAPTOR_SERIALIZER_HTML, test $html_serializer = yes)
 AM_CONDITIONAL(RAPTOR_SERIALIZER_JSON, test $json_serializer = yes)
+AM_CONDITIONAL(RAPTOR_SERIALIZER_JSONLD, test $jsonld_serializer = yes)
 AM_CONDITIONAL(RAPTOR_SERIALIZER_NQUADS, test $nquads_serializer = yes)
 
 AM_CONDITIONAL(RAPTOR_RSS_COMMON, test $rss_1_0_serializer = yes -o $rss_parser = yes)
